@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="copyPaste" label="copyPaste">
+    <memberTool name="copyPaste_copy"/>
+    <memberTool name="copyPaste_paste"/>
+    <memberTool name="copyPaste_pasteUser"/>
+    <memberTool name="copyPaste_post"/>
+    <memberTool name="copyPaste_fetch"/>
+    <memberTool name="copyPaste_package"/>
+    <memberTool name="copyPaste_unpackage"/>
+  </toolshelf>
+
+  <tool name="copyPaste_copy" label="Copy" icon="$HOME/Library/Preferences/houdini/10.0/config/Icons/copyPaste/copy.png">
+    <script scriptType="python"><![CDATA[import copyPaste.copyPaste as CopyPaste
+reload(CopyPaste)
+instance = CopyPaste.CopyPaste()
+instance.copy()]]></script>
+  </tool>
+
+  <tool name="copyPaste_paste" label="Paste" icon="$HOME/Library/Preferences/houdini/10.0/config/Icons/copyPaste/paste.png">
+    <script scriptType="python"><![CDATA[import copyPaste.copyPaste as CopyPaste
+reload(CopyPaste)
+instance = CopyPaste.CopyPaste()
+instance.paste()]]></script>
+  </tool>
+
+  <tool name="copyPaste_pasteUser" label="Paste user" icon="$HOME/Library/Preferences/houdini/10.0/config/Icons/copyPaste/pasteUser.png">
+    <script scriptType="python"><![CDATA[import copyPaste.copyPaste as CopyPaste
+reload(CopyPaste)
+instance = CopyPaste.CopyPaste()
+instance.pasteUser()]]></script>
+  </tool>
+
+  <tool name="copyPaste_post" label="PasteBin send" icon="$HOME/Library/Preferences/houdini/10.0/config/Icons/copyPaste/post.png">
+    <script scriptType="python"><![CDATA[import copyPaste.copyPaste as CopyPaste
+reload(CopyPaste)
+instance = CopyPaste.CopyPasteBin()
+instance.post()]]></script>
+  </tool>
+
+  <tool name="copyPaste_fetch" label="PasteBin fetch" icon="$HOME/Library/Preferences/houdini/10.0/config/Icons/copyPaste/fetch.png">
+    <script scriptType="python"><![CDATA[import copyPaste.copyPaste as CopyPaste
+reload(CopyPaste)
+instance = CopyPaste.CopyPasteBin()
+instance.fetch()]]></script>
+  </tool>
+
+  <tool name="copyPaste_package" label="Package" icon="$HOME/Library/Preferences/houdini/10.0/config/Icons/copyPaste/package.png">
+    <script scriptType="python"><![CDATA[import copyPaste.package
+reload(copyPaste.package)
+copyPaste.package.package()]]></script>
+  </tool>
+
+  <tool name="copyPaste_unpackage" label="Unpackage" icon="$HOME/Library/Preferences/houdini/10.0/config/Icons/copyPaste/unpack.png">
+    <script scriptType="python"><![CDATA[import copyPaste.package
+reload(copyPaste.package)
+copyPaste.package.unpackage()]]></script>
+  </tool>
+</shelfDocument>
